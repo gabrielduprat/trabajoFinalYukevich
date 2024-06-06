@@ -1,0 +1,251 @@
+//import com.sun.org.apache.xpath.internal.operations.String;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import javax.sound.midi.Soundbank;
+public class campeontaCarreras {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int opcion = competencias();
+        ArrayList<Persona> personas = new ArrayList<Persona>();
+        ArrayList<Vehiculo> vehiculos = new ArrayList<Vehiculo>();
+        ArrayList<Categoria> categorias = new ArrayList<Categoria>();
+        ArrayList<Etapa> etapas = new ArrayList<Etapa>();
+
+
+        if(opcion == 1){
+            do {
+                int opcionC = categoria();
+                if(opcionC == 1 || opcionC == 3){
+                    inscripcion();
+                }else if(opcionC == 2){
+                    inscripcion();
+                    inscripcion();
+                }else{
+                    inscripcion();
+                    inscripcion();
+                    inscripcion();
+                    inscripcion();
+                }
+
+                System.out.println("Desea continuar con otra inscripción?");
+                System.out.println("1. Si ingrese 1");
+                System.out.println("0. No ingrese 0");
+                opcion = scanner.nextInt();
+            } while (opcion != 0); 
+        }
+        else if(opcion == 2){
+            espectador();
+        }
+        else{
+            System.out.println("Opción no válida");
+        }
+
+    }
+    public static int competencias(){
+        Scanner scanner = new Scanner(System.in);
+        int opcion;
+        System.out.println("Bienvenido a la aplicación de campeones de carreras");
+        System.out.println("Seleccione una opción:");
+        System.out.println("1. Inscribirse");
+        System.out.println("2. Espectador");
+        opcion = scanner.nextInt();
+        
+        return opcion;
+    }
+    
+    public static void inscripcion(){
+        Scanner scanner = new Scanner(System.in);
+        int opcion;
+        System.out.println("Ingrese su nombre y apellido");
+        scanner.nextLine();
+        String nombreYAp = scanner.nextLine();
+        System.out.println("Ingrese su dni");
+        int dni = scanner.nextInt();
+        System.out.println("Ingrese su fecha de nacimiento");
+        scanner.nextLine();
+        String fechaNacimiento = scanner.nextLine();
+        System.out.println("Ingrese su numero de inscripcion");
+        int numeroInscripcion = scanner.nextInt();
+        System.out.println("Ingrese su numero de pasajeros");
+        int numeroPasajeros = scanner.nextInt();
+        System.out.println("Ingrese su tipo de vehiculo");
+        scanner.nextLine();
+        String marcaVipehiculo = scanner.nextLine();
+        System.out.println("Ingrese su matricula");
+        scanner.nextLine();
+        String matricula = scanner.nextLine();
+        
+        
+        System.out.println("Su inscripción se ha completado correctamente");
+        
+    }
+    
+    public static int categoria(){
+        Scanner scanner = new Scanner(System.in);
+        int opcion;
+        System.out.println("A que categoría pertenece su vehiculo?");
+        System.out.println("1. A la categoría de karting");
+        System.out.println("2. A la categoría de auto");
+        System.out.println("3. A la categoría de motocicleta");
+        System.out.println("4. A la categoría de camion");
+        opcion = scanner.nextInt();
+        
+        return opcion;
+    }
+
+    public static void espectador(){
+        Scanner scanner = new Scanner(System.in);
+        int opcion;
+        System.out.println("Bienvenido a la aplicación de campeones de carreras");
+        System.out.println("Seleccione una opción:");
+        System.out.println("1. Inscribirse");
+        System.out.println("2. Espectador");
+        opcion = scanner.nextInt();
+        
+//        return opcion;
+    }
+    
+    public static void etapa(){
+        Scanner scanner = new Scanner(System.in);
+        int opcion;
+        System.out.println("Bienvenido a la aplicación de campeones de carreras");
+        System.out.println("Seleccione una opción:");
+        System.out.println("1. Inscribirse");
+        System.out.println("2. Espectador");
+        opcion = scanner.nextInt();
+        
+        //return opcion;
+    }
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    public  class Vehiculo{
+        String matricula;
+        String marca;
+
+        public String getMatricula() {
+            return matricula;
+        }
+
+        public int getNumero() {
+            return numero;
+        }
+
+        public String getMarca() {
+            return marca;
+        }
+
+        public void setMarca(String marca) {
+            this.marca = marca;
+        }
+
+        public void setNumero(int numero) {
+            this.numero = numero;
+        }
+
+        public void setMatricula(String matricula) {
+            this.matricula = matricula;
+        }
+
+        int numero;
+        String pasajeros;
+
+        public String getPasajeros() {
+            return pasajeros;
+        }
+
+        public void setPasajeros(String pasajeros) {
+            this.pasajeros = pasajeros;
+        }
+    }
+    public class Persona{
+        public int getDni() {
+            return dni;
+        }
+
+        public void setDni(int dni) {
+            this.dni = dni;
+        }
+
+        int dni;
+
+        public String getFechaNacimiento() { 
+            return fechaNacimiento;
+        }
+
+        public void setFechaNacimiento(String fechaNacimiento) {
+            this.fechaNacimiento = fechaNacimiento;
+        }
+
+        public String getNombreYAp() {
+            return nombreYAp;
+        }
+
+        public void setNombreYAp(String nombreYAp) {
+            this.nombreYAp = nombreYAp;
+        }
+
+        String nombreYAp;
+        String fechaNacimiento;
+    }
+    public class Categoria{
+        int id;
+        String tipo;
+        int ranking;
+    }
+    public  class Etapa{
+        String partida;
+
+        public int getDistancia() {
+            return distancia;
+        }
+
+        public void setDistancia(int distancia) {
+            this.distancia = distancia;
+        }
+
+        public String getPartida() {
+            return partida;
+        }
+
+        public String getDestino() {
+            return destino;
+        }
+
+        public void setDestino(String destino) {
+            this.destino = destino;
+        }
+
+        public void setPartida(String partida) {
+        
+            this.partida = partida;
+        }
+
+        String destino;
+        int distancia;
+    }
+}
+// objeto etapa: lugar de llegada y partida y  distancia
+//    persona, vehiculo->categoria, numero de inscripcion
+
