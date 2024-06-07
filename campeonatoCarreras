@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import javax.sound.midi.Soundbank;
-public class campeontaCarreras {
+public class campeonatoCarreras {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
